@@ -1,5 +1,7 @@
 import 'bootstrap';
 import jQuery from 'jquery';
+import Swal from "sweetalert2";
+window.Swal = Swal;
 window.$ = jQuery;
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests

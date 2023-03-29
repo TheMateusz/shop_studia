@@ -1,11 +1,16 @@
 {
   "resources/js/app.js": {
-    "file": "assets/app-4f1b37dc.js",
+    "file": "assets/app-f237de4b.js",
     "isEntry": true,
     "src": "resources/js/app.js"
   },
+  "resources/js/delete.js": {
+    "file": "assets/delete-ddaae419.js",
+    "isEntry": true,
+    "src": "resources/js/delete.js"
+  },
   "resources/sass/app.scss": {
-    "file": "assets/app-67dcdfd2.css",
+    "file": "assets/app-ddfab76e.css",
     "isEntry": true,
     "src": "resources/sass/app.scss"
   }

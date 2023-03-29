@@ -79,8 +79,9 @@
     </div>
     <script type="text/javascript">
         document.addEventListener('DOMContentLoaded', function () {
-            @yield('javascript')
+            @yield('js')
         }, false);
     </script>
+    @yield('js-files')
 </body>
 </html>
