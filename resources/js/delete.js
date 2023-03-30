@@ -1,5 +1,6 @@
 $(function() {
     $('.delete').click(function (){
+        console.log(window.location);
         Swal.fire({
             title: 'Czy na pewno chcesz usunąć rekord?',
             icon: 'warning',
@@ -10,7 +11,7 @@ $(function() {
             if (result.value) {
                 $.ajax({
                     method: "DELETE",
-                    url: "/users/"+ $(this).data('id')
+                    url: window.location + '/' + $(this).data('id')
                 }).done(function(response) {
                     window.location.reload();
                 }).fail(function (data){

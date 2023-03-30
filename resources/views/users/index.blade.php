@@ -31,7 +31,7 @@
     </div>
 </div>
 @endsection
-@section('js')
+@section('javascript')
 @endsection
 @section('js-files')
     @vite(['resources/js/delete.js'])
