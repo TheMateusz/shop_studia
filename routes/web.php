@@ -15,16 +15,7 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/hello',[HelloWorldController::class, 'show']);
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', [\App\Http\Controllers\WelcomeController::class , 'index']);
 
 Route::get('/products', [ProductController::class, 'index'])->name('products.index')->middleware('auth');
 Route::get('/products/create', [ProductController::class, 'create'])->name('products.create')->middleware('auth');
@@ -36,3 +27,7 @@ Route::delete('/products/{product}', [ProductController::class, 'destroy'])->nam
 
 Route::get('/users/list', [UserController::class, 'index'])->middleware('auth');
 Route::delete('/users/{user}', [UserController::class, 'destroy'])->middleware('auth');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

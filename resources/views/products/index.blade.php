@@ -17,7 +17,8 @@
                 <thead>
                 <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Email</th>
+                    <th scope="col">Nazwa</th>
+                    <th scope="col">Obraz</th>
                     <th scope="col">Opis</th>
                     <th scope="col">Ilość</th>
                     <th scope="col">Cena</th>
@@ -29,6 +30,7 @@
                     <tr>
                         <th scope="row">{{$product->id}}</th>
                         <td>{{$product->name}}</td>
+                        <td><img style="width: 100px; height: 100px;" src="{{ asset('storage/'.$product->image_path) }}"></td>
                         <td>{{$product->description}}</td>
                         <td>{{$product->amount}}</td>
                         <td>{{$product->price}}</td>
