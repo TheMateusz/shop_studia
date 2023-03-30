@@ -29,7 +29,7 @@
                                 <label for="description" class="col-md-4 col-form-label text-md-end">Opis</label>
 
                                 <div class="col-md-6">
-                                    <textarea id="description" maxlength="1500" class="form-control @error('description') is-invalid @enderror" name="description" autofocus>{{ $product->description }}</textarea>
+                                    <textarea id="description" maxlength="1500" class="form-control @error('description') is-invalid @enderror" name="description" required autofocus>{{ $product->description }}</textarea>
 
                                     @error('description')
                                     <span class="invalid-feedback" role="alert">
@@ -71,13 +71,21 @@
                                 <label for="image" class="col-md-4 col-form-label text-md-end">Grafika</label>
 
                                 <div class="col-md-6">
-                                    <input id="image" type="file" class="form-control" name="image">
+                                    <input id="image" type="file" class="form-control @error('image') is-invalid @enderror" name="image">
+
+                                    @error('image')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="row mb-3 align-items-center">
                                 <label for="image" class="col-md-4 col-form-label text-md-end">Poprzednia grafika</label>
                                 <div class="col-md-6">
-                                    <img style="width: 100%" src="{{asset('storage/'.$product->image_path)}}">
+                                    @if(!is_null($product->image_path))
+                                        <img style="width: 100%" src="{{asset('storage/'.$product->image_path)}}">
+                                    @endif
                                 </div>
                             </div>
                             <div class="row mb-0">

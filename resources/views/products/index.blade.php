@@ -30,7 +30,7 @@
                     <tr>
                         <th scope="row">{{$product->id}}</th>
                         <td>{{$product->name}}</td>
-                        <td><img style="width: 100px; height: 100px;" src="{{ asset('storage/'.$product->image_path) }}"></td>
+                        <td>@if(!is_null($product->image_path))<img style="width: 100px; height: 100px;" src="{{ asset('storage/'.$product->image_path) }}">@endif</td>
                         <td>{{$product->description}}</td>
                         <td>{{$product->amount}}</td>
                         <td>{{$product->price}}</td>
