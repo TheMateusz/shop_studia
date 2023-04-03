@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreProductRequest;
 use App\Models\Product;
+use App\Models\ProductCategory;
 use App\Models\User;
 use Exception;
 use Illuminate\Http\Request;
@@ -26,7 +27,9 @@ class ProductController extends Controller
      */
     public function create(): \Illuminate\Contracts\View\View|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\Foundation\Application
     {
-        return view('products.create');
+        return view("products.create", [
+            'categories' => ProductCategory::all()
+        ]);
     }
 
     /**
@@ -58,7 +61,8 @@ class ProductController extends Controller
     public function edit(Product $product): \Illuminate\Contracts\View\View|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\Foundation\Application
     {
         return view('products.edit', [
-            'product' => $product
+            'product' => $product,
+            'categories' => ProductCategory::all()
         ]);
     }
 

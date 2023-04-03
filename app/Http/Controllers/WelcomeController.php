@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\ProductCategory;
 use App\Models\User;
 use Exception;
 use Illuminate\Http\Request;
@@ -16,7 +17,8 @@ class WelcomeController extends Controller
     public function index(): \Illuminate\Contracts\View\View|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\Foundation\Application
     {
         return view('welcome', [
-            'products' => Product::paginate(10)
+            'products' => Product::paginate(10),
+            'categories' => ProductCategory::all()
         ]);
     }
 }
