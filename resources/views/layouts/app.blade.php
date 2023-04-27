@@ -55,12 +55,16 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="/users/list">Użytkownicy</a>
-                                    <a class="dropdown-item" href="{{ route('products.index') }}">Produkty</a>
+                                    @can('isAdmin')
+                                        <a class="dropdown-item" href="{{ route('users.index') }}"><i class="fa-solid fa-users"></i> Użytkownicy</a>
+                                        <a class="dropdown-item" href="{{ route('products.index') }}"><i class="fa-solid fa-store"></i> Produkty</a>
+                                    @endcan
+                                    <a class="dropdown-item" href="{{ route('cart.index') }}"><i class="fa-solid fa-cart-shopping"></i> Koszyk</a>
+                                    <a class="dropdown-item" href="{{ route('orders.index') }}"><i class="fa-solid fa-box"></i> Zamówienia</a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                                                     document.getElementById('logout-form').submit();"><i class="fa-solid fa-right-from-bracket"></i>
+                                         {{ __('Logout') }}
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">

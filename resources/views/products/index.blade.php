@@ -2,13 +2,14 @@
 
 @section('content')
     <div class="container">
+        @include('helpers.flash-messages')
         <div class="row">
             <div class="col-6">
-                <h1>{{ __('shop.product.index_title') }}</h1>
+                <h1><i class="fa-solid fa-store"></i> {{ __('shop.product.index_title') }}</h1>
             </div>
             <div class="col-6">
                 <a class="d-flex justify-content-end" href="{{ route('products.create') }}">
-                    <button type="button" class="btn btn-primary">{{ __('shop.button.add') }}</button>
+                    <button type="button" class="btn btn-primary"><i class="fa-solid fa-plus"></i> {{ __('shop.button.add') }}</button>
                 </a>
             </div>
         </div>
@@ -39,12 +40,12 @@
                         <td>
                             <div class="d-flex gap-2">
                                 <a href="{{ route('products.show', $product->id) }}">
-                                    <button class="btn btn-primary btn-sm">P</button>
+                                    <button class="btn btn-primary btn-sm"><i class="fa-solid fa-magnifying-glass"></i></button>
                                 </a>
                                 <a href="{{ route('products.edit', $product->id) }}">
-                                    <button class="btn btn-success btn-sm">E</button>
+                                    <button class="btn btn-success btn-sm"><i class="fa-solid fa-pen-to-square"></i></button>
                                 </a>
-                                <button data-id="{{$product->id}}" class="btn btn-danger btn-sm delete">X</button>
+                                <button data-id="{{$product->id}}" class="btn btn-danger btn-sm delete"><i class="fa-solid fa-trash"></i></button>
                             </div>
                         </td>
                     </tr>

@@ -1,6 +1,5 @@
 $(function() {
     $('.delete').click(function (){
-        console.log(window.location);
         Swal.fire({
             title: 'Czy na pewno chcesz usunąć rekord?',
             icon: 'warning',
@@ -11,7 +10,7 @@ $(function() {
             if (result.value) {
                 $.ajax({
                     method: "DELETE",
-                    url: window.location + '/' + $(this).data('id')
+                    url: removeDoubleSlashes(window.location.origin + window.location.pathname + '/' + $(this).data('id'))
                 }).done(function(response) {
                     window.location.reload();
                 }).fail(function (data){
@@ -21,3 +20,6 @@ $(function() {
         })
     })
 });
+function removeDoubleSlashes(url) {
+    return url.replace(/([^:]\/)\/+/g, '$1');
+}

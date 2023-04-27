@@ -9,6 +9,7 @@
 
                     <div class="card-body">
                         <form method="POST" action="{{ route('products.update', $product->id) }}" enctype="multipart/form-data">
+                            {{ method_field('PUT') }}
                             @csrf
 
                             <div class="row mb-3">
@@ -100,15 +101,17 @@
                                     @enderror
                                 </div>
                             </div>
-                            <div class="row mb-3 align-items-center">
-                                <div class="col-md-6">
+                            <div class="form-group row">
+                                <div class="offset-md-4 col-md-6">
                                     @if(!is_null($product->image_path))
-                                        <img src="{{ asset('storage/' . $product->image_path) }}" alt="{{ __('shop.product.fields.image') }}">
+                                        <a href="{{ route('products.downloadImage', $product->id) }}">
+                                            <img style="width: 100%;" src="{{ asset('storage/' . $product->image_path) }}" alt="{{ __('shop.product.fields.image') }}">
+                                        </a>
                                     @endif
                                 </div>
                             </div>
-                            <div class="row mb-0">
-                                <div class="col-md-6 offset-md-4">
+                            <div class="form-group row mb-0 float-right">
+                                <div class="col-md-6">
                                     <button type="submit" class="btn btn-primary">
                                         {{ __('shop.button.save') }}
                                     </button>

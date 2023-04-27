@@ -2,6 +2,12 @@
 
 @section('content')
 <div class="container">
+    @include('helpers.flash-messages')
+    <div class="row">
+        <div class="col-6">
+            <h1><i class="fa-solid fa-users"></i> {{ __('shop.user.index_title') }}</h1>
+        </div>
+    </div>
     <div class="row">
         <table class="table">
             <thead>
@@ -22,7 +28,12 @@
                     <td>{{$user->name}}</td>
                     <td>{{$user->surname}}</td>
                     <td>{{$user->phone_number}}</td>
-                    <td><button data-id="{{$user->id}}" class="btn btn-danger btn-sm delete">X</button></td>
+                    <td>
+                        <a href="{{ route('users.edit', $user->id) }}">
+                            <button class="btn btn-success btn-sm"><i class="far fa-edit"></i></button>
+                        </a>
+                        <button data-id="{{$user->id}}" class="btn btn-danger btn-sm delete"><i class="fa-solid fa-trash"></i></button>
+                    </td>
                 </tr>
             @endforeach
             </tbody>
