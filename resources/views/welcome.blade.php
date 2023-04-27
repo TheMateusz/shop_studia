@@ -15,10 +15,6 @@
                                     <option value="best-selling">Best Selling</option>
                                 </select>
                             </div>
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-lg btn-light"> <span class="fa fa-arrow-left"></span> </button>
-                                <button type="button" class="btn btn-lg btn-light"> <span class="fa fa-arrow-right"></span> </button>
-                            </div>
                             <div class="mb-3 mt-3 mt-md-0 mb-md-0 d-flex flex-row justify-content-center align-items-center">
                                 <select id="results-per-page-select" class="form-control float-right products-count">
                                     <option value="3">3</option>
@@ -58,7 +54,6 @@
                     </div>
                     <div class="row sorting mb-5 mt-5">
                         <div class="col-12 d-flex justify-content-between">
-                            <a class="btn btn-light">Back to top</a>
                             <div class="dropdown float-md-right">
                                 <select id="results-per-page-select" class="form-control float-right products-count">
                                     <option value="3">3</option>
