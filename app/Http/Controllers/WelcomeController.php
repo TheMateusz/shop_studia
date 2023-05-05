@@ -19,7 +19,7 @@ class WelcomeController extends Controller
     public function index(Request $request): \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Foundation\Application|JsonResponse
     {
         $filters = $request->query('filter');
-        $paginate = $request->query('paginate') ?? 3;
+        $paginate = $request->query('paginate') ?? 12;
         $query = Product::query();
         $query->paginate($paginate);
         if(!is_null($filters)){
@@ -34,7 +34,7 @@ class WelcomeController extends Controller
             }
 
             return response()->json([
-                'data' => $query->get()
+                'data' => $query->with('category')->get()
             ]);
         }
 

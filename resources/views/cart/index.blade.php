@@ -6,7 +6,7 @@
         <div class="cart_section">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-lg-10 offset-lg-1">
+                    <div class="col-lg-12">
                         <div class="cart_container">
                             <div class="cart_title">Koszyk<small> ({{ $cart->getItems()->count() }}) </small></div>
                             <form action="{{ route('orders.store') }}" method="POST" id="order-form">

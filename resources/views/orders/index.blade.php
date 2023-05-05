@@ -5,9 +5,6 @@
         @include('helpers.flash-messages')
         <div class="row">
             <div class="col-6">
-                <h1><i class="fas fa-clipboard-list"></i> {{ __('shop.product.index_title') }}</h1>
-            </div>
-            <div class="col-6">
                 <h1><i class="fas fa-clipboard-list"></i> Zamówienia</h1>
             </div>
         </div>

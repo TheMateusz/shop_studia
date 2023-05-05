@@ -6,15 +6,15 @@
                 <div class="container-fluid">
                     <div class="row mb-5">
                         <div class="col-12 d-flex justify-content-between align-items-end">
-                            <div class="d-flex flex-column">
-                                <label class="">Sort by:</label>
-                                <select id="sort-by-select" class="form-control">
-                                    <option value="relevance">Relevance</option>
-                                    <option value="price-descending">Price Descending</option>
-                                    <option value="price-ascending">Price Ascending</option>
-                                    <option value="best-selling">Best Selling</option>
-                                </select>
-                            </div>
+{{--                            <div class="d-flex flex-column">--}}
+{{--                                <label class="">Sort by:</label>--}}
+{{--                                <select id="sort-by-select" class="form-control">--}}
+{{--                                    <option value="relevance">Relevance</option>--}}
+{{--                                    <option value="price-descending">Price Descending</option>--}}
+{{--                                    <option value="price-ascending">Price Ascending</option>--}}
+{{--                                    <option value="best-selling">Best Selling</option>--}}
+{{--                                </select>--}}
+{{--                            </div>--}}
                             <div class="mb-3 mt-3 mt-md-0 mb-md-0 d-flex flex-row justify-content-center align-items-center">
                                 <select id="results-per-page-select" class="form-control float-right products-count">
                                     <option value="3">3</option>
@@ -41,6 +41,9 @@
                                         <h4 class="card-title">
                                             {{ $product->name }}
                                         </h4>
+                                        <h5 class="small">
+                                            {{ $product->category->name }}
+                                        </h5>
                                         <h5 class="card-price small text-danger">
                                             <i>{{ $product->price }} zł</i>
                                         </h5>

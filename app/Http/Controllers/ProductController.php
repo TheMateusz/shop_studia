@@ -24,7 +24,7 @@ class ProductController extends Controller
     public function index(): \Illuminate\Contracts\View\View|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\Foundation\Application
     {
         return view('products.index', [
-            'products' => Product::paginate(10)
+            'products' => Product::paginate(12)
         ]);
     }
 
@@ -56,6 +56,7 @@ class ProductController extends Controller
      */
     public function show(Product $product): \Illuminate\Contracts\View\View|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\Foundation\Application
     {
+        $product->load('category');
         return view('products.show', [
             'product' => $product
         ]);

@@ -60,6 +60,8 @@ $(function (){
                     '<div class="card-body text-center">' +
                     '<h4 class="card-title">' + product.name +
                     '</h4>' +
+                    '<h5 class="small">' + product.category.name +
+                    '</h5>' +
                     '<h5 class="card-price small text-danger">' +
                     '<i>'+ product.price +' zł</i>' +
                     '</h5>' +
